@@ -1,6 +1,3 @@
-# gitea
-Gitea - Git - Docker compose
+# Gitea
 
-Ver en "localhost:8200"
-
-
+Ver en "http://localhost:8200"
