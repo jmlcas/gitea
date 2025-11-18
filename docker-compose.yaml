@@ -1,7 +1,7 @@
 services:
 
   gitea:
-    image: gitea/gitea:latest     #1.17.3
+    image: gitea/gitea:latest
     container_name: gitea
     environment:
       - USER_UID=1000
@@ -23,8 +23,8 @@ services:
       - db
 
   db:
-    image: mariadb:latest    #mysql:8
-    restart: always
+    image: mariadb:latest
+    restart: unless-stopped
     environment:
       - MYSQL_ROOT_PASSWORD=gitea
       - MYSQL_USER=gitea
@@ -32,4 +32,5 @@ services:
       - MYSQL_DATABASE=gitea
     volumes:
       - ./mysql:/var/lib/mysql
+
 
